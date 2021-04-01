@@ -27,8 +27,7 @@
   "lint-staged": {
     "*.{tsx,ts,js}": [
       "prettier --write",
-      "npm run lint",
-      "git add"
+      "npm run lint"
     ]
   },
   "devDependencies": {
