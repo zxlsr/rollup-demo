@@ -7,7 +7,7 @@ import pkg from './package.json';
 
 const commonOutput = {
   name: 'blComponent',
-  globals: { react: 'React', 'react-dom': 'ReactDOM', antd: 'antd' },
+  globals: { react: 'React', 'react-dom': 'ReactDOM' },
 };
 
 export default {
@@ -18,12 +18,18 @@ export default {
       file: pkg.main,
     },
     {
-      format: 'umd',
+      format: 'iife',
       file: pkg.unpkg,
       plugins: [terser()],
     },
   ].map((conf) => ({ ...commonOutput, ...conf })),
-  external: ['react', 'react-dom', 'antd'],
+  external: ['react', 'react-dom'],
+  onwarn: (warning) => {
+    if (warning.code === 'THIS_IS_UNDEFINED') {
+      return;
+    }
+    console.error(warning.message);
+  },
   plugins: [
     commonjs(),
     nodeResolve(),
