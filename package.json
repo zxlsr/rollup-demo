@@ -1,6 +1,6 @@
 {
   "name": "rollup-ts-demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "unpkg": "dist/blComponent.min.js",
   "types": "dist/index.d.ts",
