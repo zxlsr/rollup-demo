@@ -3,6 +3,7 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
+import css from 'rollup-plugin-css-only'; // 提取css
 import pkg from './package.json';
 
 const commonOutput = {
@@ -33,6 +34,9 @@ export default {
   plugins: [
     commonjs(),
     nodeResolve(),
+    css({
+      output: 'blComponent.css',
+    }),
     typescript({
       exclude: 'node_modules/**',
     }),
