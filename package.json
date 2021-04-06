@@ -1,5 +1,5 @@
 {
-  "name": "rollup-ts-demo1",
+  "name": "rollup-ts-demo-zx",
   "version": "1.0.0",
   "main": "dist/blComponent.js",
   "unpkg": "dist/blComponent.min.js",

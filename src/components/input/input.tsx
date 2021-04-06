@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input as AntInput, InputProps as AntInputProps } from 'antd';
+import 'antd/es/input/style';
 
 export interface InputProps extends AntInputProps {}
 
